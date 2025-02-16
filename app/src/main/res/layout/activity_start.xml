@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_background"
+    android:padding="20dp">
+
+    <!-- Animated FrameLayout (Logo + Circle) -->
+    <FrameLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp">
+
+        <!-- Background Circle -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/circle_background" />
+
+        <!-- Logo on Top of Circle -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo" />
+
+    </FrameLayout>
+
+    <!-- "Enter Your Name" Label -->
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoContainer"
+        android:layout_marginTop="50dp"
+        android:text="Enter Your Name"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+    <!-- EditText for Name Input -->
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_below="@id/tvLabel"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="John Doe"
+        android:padding="16dp"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <!-- Start Button at Bottom -->
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_start"
+        android:padding="12dp"
+        android:text="Start"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+</RelativeLayout>

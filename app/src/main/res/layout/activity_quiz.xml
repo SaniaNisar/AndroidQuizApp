@@ -1,0 +1,235 @@
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="10dp"-->
+<!--    android:background="#808080">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:layout_margin="0dp">-->
+
+<!--        &lt;!&ndash; Previous Button with Arrow &ndash;&gt;-->
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnPrevious"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:src="@drawable/baseline_arrow_back_24"-->
+<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:contentDescription="Previous" />-->
+
+<!--        &lt;!&ndash; Progress Text &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvProgress"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="#6D758F"-->
+<!--            android:layout_marginStart="140dp" />-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Question Text &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvQuestion"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="#2D2D2D"-->
+<!--        android:textStyle="bold"-->
+<!--        android:gravity="center"-->
+<!--        android:paddingBottom="20dp"-->
+<!--        android:layout_marginTop="30dp"/>-->
+
+<!--    &lt;!&ndash; Radio Group &ndash;&gt;-->
+<!--    <RadioGroup-->
+<!--        android:id="@+id/rgOptions"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbOption1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/radio_selector"-->
+<!--            android:padding="12dp"-->
+<!--            android:textSize="16sp"-->
+<!--            android:button="@null"/>-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbOption2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/radio_selector"-->
+<!--            android:padding="12dp"-->
+<!--            android:textSize="16sp"-->
+<!--            android:button="@null"-->
+<!--            android:layout_marginTop="10dp"/>-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbOption3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/radio_selector"-->
+<!--            android:padding="12dp"-->
+<!--            android:textSize="16sp"-->
+<!--            android:button="@null"-->
+<!--            android:layout_marginTop="10dp"/>-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbOption4"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/radio_selector"-->
+<!--            android:padding="12dp"-->
+<!--            android:textSize="16sp"-->
+<!--            android:button="@null"-->
+<!--            android:layout_marginTop="10dp"/>-->
+<!--    </RadioGroup>-->
+
+<!--    &lt;!&ndash; Next / Finish Button &ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/btnNext"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Next"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:background="@drawable/button_background"-->
+<!--        android:padding="12dp"-->
+<!--        android:layout_marginTop="390dp"/>-->
+<!--</LinearLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F8F8F8">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingVertical="10dp">
+
+        <!-- Previous Button -->
+        <ImageButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <!-- Progress Text -->
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#6D758F"
+            android:layout_gravity="center"
+            android:layout_marginStart="140dp"/>
+    </LinearLayout>
+
+    <!-- Question Box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_margin="20dp"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:radius="15dp">
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#2D2D2D"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:radius="15dp"/>
+</LinearLayout>
+
+    <!-- Radio Group -->
+     <RadioGroup
+         android:id="@+id/rgOptions"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_marginTop="20dp">
+
+<RadioButton
+    android:id="@+id/rbOption1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:padding="12dp"
+    android:textColor="#2D2D2D"
+    android:textStyle="bold"
+    android:background="@drawable/radio_selector"
+    android:gravity="start|center_vertical"/>
+
+<RadioButton
+    android:id="@+id/rbOption2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:padding="12dp"
+    android:textStyle="bold"
+    android:textColor="#2D2D2D"
+    android:background="@drawable/radio_selector"
+    android:gravity="start|center_vertical"
+    android:layout_marginTop="10dp"/>
+
+<RadioButton
+    android:id="@+id/rbOption3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:padding="12dp"
+    android:textColor="#2D2D2D"
+    android:textStyle="bold"
+    android:background="@drawable/radio_selector"
+    android:gravity="start|center_vertical"
+    android:layout_marginTop="10dp"/>
+
+<RadioButton
+    android:id="@+id/rbOption4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:padding="12dp"
+    android:textStyle="bold"
+    android:textColor="#2D2D2D"
+    android:background="@drawable/radio_selector"
+    android:gravity="start|center_vertical"
+    android:layout_marginTop="10dp"/>
+</RadioGroup>
+</LinearLayout>
+<Button
+    android:id="@+id/btnNext"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Next"
+    android:textSize="16sp"
+    android:textColor="@android:color/white"
+    android:background="@drawable/button_background"
+    android:padding="12dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="40dp"/>
+</RelativeLayout>
