@@ -5,7 +5,6 @@
     android:background="@drawable/quiz_background"
     android:padding="20dp">
 
-    <!-- Animated FrameLayout (Logo + Circle) -->
     <FrameLayout
         android:id="@+id/logoContainer"
         android:layout_width="180dp"
@@ -13,14 +12,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp">
 
-        <!-- Background Circle -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/circle_background" />
 
-        <!-- Logo on Top of Circle -->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -30,7 +27,6 @@
 
     </FrameLayout>
 
-    <!-- "Enter Your Name" Label -->
     <TextView
         android:id="@+id/tvLabel"
         android:layout_width="wrap_content"
@@ -42,7 +38,6 @@
         android:textColor="#ffffff"
         android:textStyle="bold"/>
 
-    <!-- EditText for Name Input -->
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
@@ -55,7 +50,6 @@
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
-    <!-- Start Button at Bottom -->
     <Button
         android:id="@+id/btnStart"
         android:layout_width="match_parent"

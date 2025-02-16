@@ -13,9 +13,9 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        // Apply animation to the FrameLayout (logo + background circle)
         FrameLayout logoContainer = findViewById(R.id.logoContainer);
+
+        // Animation is applied to both the logo(squared) & circle background too
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.logo_animation);
         logoContainer.startAnimation(animation);
 

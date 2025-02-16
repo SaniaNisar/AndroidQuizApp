@@ -1,25 +1,20 @@
 package com.app.quizapp;
 
 public class Question {
-    private String text;
-    private String[] options;
-    private String answer;
-
+    private String qtext, qanswer;
+    private final String[] options;
     public Question(String text, String[] options, String answer) {
-        this.text = text;
+        this.qtext = text;
         this.options = options;
-        this.answer = answer;
+        this.qanswer = answer;
     }
-
     public String getText() {
-        return text;
+        return qtext;
     }
-
+    public String getAnswer() {
+        return qanswer;
+    }
     public String[] getOptions() {
         return options;
-    }
-
-    public String getAnswer() {
-        return answer;
     }
 }

@@ -18,12 +18,8 @@ public class ResultActivity extends AppCompatActivity {
         tvPlayerName = findViewById(R.id.tvPlayerName);
         tvScore = findViewById(R.id.tvScore);
         btnShare = findViewById(R.id.btnShare);
-
-        // Get Player Name and Score from Intent
         String playerName = getIntent().getStringExtra("PLAYER_NAME");
         int score = getIntent().getIntExtra("SCORE", 0);
-
-        // Display Name and Score Correctly
         tvPlayerName.setText(playerName);
         tvScore.setText(score + "/4");
 

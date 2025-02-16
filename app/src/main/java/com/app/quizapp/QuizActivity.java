@@ -14,22 +14,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
+    String playerName;
+    ImageButton btnPrevious;
     TextView tvQuestion, tvProgress;
+    int currentQuesIndex = 0, score = 0;
+    List<Question> questions;
+    int[] selectedAnswers;
     RadioGroup rgOptions;
     RadioButton rbOption1, rbOption2, rbOption3, rbOption4;
     Button btnNext;
-    ImageButton btnPrevious;
-    int currentQuestionIndex = 0, score = 0;
-    List<Question> questions;
-    int[] selectedAnswers; // Store user choices
-    String playerName;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        // Get Player Name from Intent
         playerName = getIntent().getStringExtra("PLAYER_NAME");
 
         tvQuestion = findViewById(R.id.tvQuestion);
@@ -47,12 +45,10 @@ public class QuizActivity extends AppCompatActivity {
         Arrays.fill(selectedAnswers, -1);
 
         loadQuestion();
-
-        // Next Button Click Listener
         btnNext.setOnClickListener(v -> {
             saveAnswer();
-            if (currentQuestionIndex < questions.size() - 1) {
-                currentQuestionIndex++;
+            if (currentQuesIndex < questions.size() - 1) {
+                currentQuesIndex++;
                 loadQuestion();
             } else {
                 calculateScore();
@@ -64,19 +60,17 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        // Previous Button Click Listener
         btnPrevious.setOnClickListener(v -> {
-            if (currentQuestionIndex > 0) {
-                saveAnswer(); // Save answer before going back
-                currentQuestionIndex--;
+            if (currentQuesIndex > 0) {
+                saveAnswer();
+                currentQuesIndex--;
                 loadQuestion();
             }
         });
     }
-
     void loadQuestion() {
-        Question q = questions.get(currentQuestionIndex);
-        tvProgress.setText((currentQuestionIndex + 1) + "/" + questions.size());
+        Question q = questions.get(currentQuesIndex);
+        tvProgress.setText((currentQuesIndex + 1) + "/" + questions.size());
         tvQuestion.setText(q.getText());
         rbOption1.setText(q.getOptions()[0]);
         rbOption2.setText(q.getOptions()[1]);
@@ -84,28 +78,23 @@ public class QuizActivity extends AppCompatActivity {
         rbOption4.setText(q.getOptions()[3]);
 
         rgOptions.clearCheck();
-        if (selectedAnswers[currentQuestionIndex] != -1) {
-            ((RadioButton) rgOptions.getChildAt(selectedAnswers[currentQuestionIndex])).setChecked(true);
+        if (selectedAnswers[currentQuesIndex] != -1) {
+            ((RadioButton) rgOptions.getChildAt(selectedAnswers[currentQuesIndex])).setChecked(true);
         }
-
-        btnNext.setText(currentQuestionIndex == questions.size() - 1 ? "Finish" : "Next");
-
-        // Hide "Previous" button on the first question
-        btnPrevious.setVisibility(currentQuestionIndex == 0 ? View.INVISIBLE : View.VISIBLE);
+        btnNext.setText(currentQuesIndex == questions.size() - 1 ? "Finish" : "Next");
+        btnPrevious.setVisibility(currentQuesIndex == 0 ? View.INVISIBLE : View.VISIBLE);
     }
-
     void saveAnswer() {
         int selectedId = rgOptions.getCheckedRadioButtonId();
         if (selectedId != -1) {
             View selectedView = findViewById(selectedId);
             int answerIndex = rgOptions.indexOfChild(selectedView);
 
-            if (answerIndex != -1) { // Prevents crash
-                selectedAnswers[currentQuestionIndex] = answerIndex;
+            if (answerIndex != -1) {
+                selectedAnswers[currentQuesIndex] = answerIndex;
             }
         }
     }
-
     void calculateScore() {
         score = 0;
         for (int i = 0; i < questions.size(); i++) {
